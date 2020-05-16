@@ -1,4 +1,4 @@
-# Computer Science Final Project: "Hangman v1.0"
+# Computer Science Final Project: "Hangman v2.0"
 # Tollin Roth
 # CSCI160_M01
 # 5-5-2020
@@ -322,7 +322,7 @@ def ran_out_of_guesses():
 
 # HANGMAN FUNCTION START:
 def hangman(word):
-    os.system('cls' if os.name == 'nt' else 'clear')    # Clear the screen for Windows, Max, & Linux.
+    os.system('cls' if os.name == 'nt' else 'clear')    # Clear the screen for Windows & Linux.
     welcome_mat()                                       # Roll out the welcome mat.
     menu = menu_options()                               # Assign menu variable to menu_options function.
     message = "Returning to Main Menu in: "
@@ -330,7 +330,7 @@ def hangman(word):
     print("---------------------------------------------------------------------------------------------------")
     print()
     option = input("Choose an option: ").lower()        # Get menu choice from user.
-    os.system('cls' if os.name == 'nt' else 'clear')    # Clear the screen for Windows, Max, & Linux.
+    os.system('cls' if os.name == 'nt' else 'clear')    # Clear the screen for Windows & Linux.
     while option in menu:                               # Validate option and set condition
         if option == "p":                               # Begin the Verbal Carnage -- Good Luck!
             guesses = ''                                # Declare a variable to hold each guess.
@@ -351,7 +351,7 @@ def hangman(word):
                     print("The word to guess was: {}. You Win!".format(word))              
                     guesses_with_guesses()
                     return_to_menu(message), countdown(numbers)
-                    os.system('cls' if os.name == 'nt' else 'clear')                # Clear the screen for Windows, Max, & Linux.
+                    os.system('cls' if os.name == 'nt' else 'clear')                # Clear the screen for Windows & Linux.
                     return
                 print()
                 print()
@@ -364,7 +364,7 @@ def hangman(word):
                     print("The word to guess was: {}.".format(word))                # Check to see if the guess is the word.
                     guessed_with_word()
                     return_to_menu(message), countdown(numbers)
-                    os.system('cls' if os.name == 'nt' else 'clear')                # Clear the screen for Windows, Max, & Linux.
+                    os.system('cls' if os.name == 'nt' else 'clear')                # Clear the screen for Windows & Linux.
                     return
                 elif guess.isalpha() and len(guess) == 1 and guess in word:         # Validate user guess if in word.
                     guesses += guess + " "                                          # Add correct guess to guesses.
@@ -372,7 +372,7 @@ def hangman(word):
                     incorrect += guess + " "                                        # Add incorrect guess to incorrect.
                 else:
                     rounds -= 1
-                os.system('cls' if os.name == 'nt' else 'clear')                    # Clear the screen for Windows, Max, & Linux.                                          
+                os.system('cls' if os.name == 'nt' else 'clear')                    # Clear the screen for Windows & Linux.                                          
                 if guess not in word:                                               # If guess is not equal to a letter in word.
                     rounds -= 1                                                     # Decrement rounds by 1.
                     print("Incorrect Guess")                                        # Visualize the 'Incorrect Guess'
@@ -381,22 +381,22 @@ def hangman(word):
                         print("The word to guess was: {}.".format(word))  # Share the word with user.
                         ran_out_of_guesses()
                         return_to_menu(message), countdown(numbers)
-                        os.system('cls' if os.name == 'nt' else 'clear')            # Clear the screen for Windows, Max, & Linux.
+                        os.system('cls' if os.name == 'nt' else 'clear')            # Clear the screen for Windows & Linux.
                         return
                 if guess == easter_egg:
-                    os.system('cls' if os.name == 'nt' else 'clear')                # Clear the screen for Windows, Max, & Linux.
+                    os.system('cls' if os.name == 'nt' else 'clear')                # Clear the screen for Windows & Linux.
                     thank_you()
                     return
         elif option == "r":                                                 
-            os.system('cls' if os.name == 'nt' else 'clear')                        # Clear the screen for Windows, Max, & Linux.    
+            os.system('cls' if os.name == 'nt' else 'clear')                        # Clear the screen for Windows & Linux.    
             rules()             
             print()
             menu_options()      
             print()
             option = input("Choose an option: ").lower()    
-            os.system('cls' if os.name == 'nt' else 'clear')                        # Clear the screen for Windows, Max, & Linux.                                
+            os.system('cls' if os.name == 'nt' else 'clear')                        # Clear the screen for Windows & Linux.                                
         elif option == "q":
-            os.system('cls' if os.name == 'nt' else 'clear')                        # Clear the screen for Windows, Max, & Linux.
+            os.system('cls' if os.name == 'nt' else 'clear')                        # Clear the screen for Windows & Linux.
             goodbye = "Goodbye, my love..."
             for letter in goodbye:
                 sys.stdout.write(letter)
@@ -416,7 +416,7 @@ def main():
     while start_menu == "Y":                                # Create a loop for replaying the game.
         word = load_ai(words)                               # Assign a new random word to word variable.
         hangman(word)                                       # Replay the Hangman program.
-        os.system('cls' if os.name == 'nt' else 'clear')    # Clear the screen for Windows, Max, & Linux.
+        os.system('cls' if os.name == 'nt' else 'clear')    # Clear the screen for Windows & Linux.
 # MAIN PROGRAM END:
 
 # MAIN FUNCTION CALL:
